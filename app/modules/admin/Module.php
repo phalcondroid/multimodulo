@@ -19,6 +19,7 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
         $loader->registerNamespaces([
             'Multimodulo\Modules\Admin\Controllers' => __DIR__ . '/controllers/',
+            'Multimodulo\Modules\Common\Models' => __DIR__ . '/../../common/models/',
             'Multimodulo\Modules\Admin\Forms' => __DIR__ . '/forms/'
         ]);
         $loader->register();
