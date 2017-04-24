@@ -1,6 +1,6 @@
 <?php
 
-namespace Multimodulo\Modules\Common\Models\Resource;
+namespace Multimodulo\Modules\Common\Models;
 
 class Resource extends \Phalcon\Mvc\Model
 {
@@ -12,7 +12,7 @@ class Resource extends \Phalcon\Mvc\Model
      * @Identity
      * @Column(type="integer", length=11, nullable=false)
      */
-    public $id_resourse;
+    public $id_resource;
 
     /**
      *
@@ -29,12 +29,34 @@ class Resource extends \Phalcon\Mvc\Model
     public $name;
 
     /**
+     *
+     * @var integer
+     * @Column(type="integer", length=2, nullable=false)
+     */
+    public $status;
+
+    /**
      * Initialize method for model.
      */
     public function initialize()
     {
-        $this->hasMany('id_resourse', 'Action', 'id_resource', ['alias' => 'Action']);
-        $this->belongsTo('id_role', 'Role', 'id_role', ['alias' => 'Role']);
+        $this->hasMany(
+            'id_resourse',
+            'Multimodulo\Modules\Common\Models\Action',
+            'id_resource',
+            ['alias' => 'Action']
+        );
+        $this->belongsTo(
+            'id_role',
+            'Multimodulo\Modules\Common\Models\Role',
+            'id_role',
+            ['alias' => 'Role']
+        );
+    }
+
+    public function beforeSave()
+    {
+        $this->status = 1;
     }
 
     /**

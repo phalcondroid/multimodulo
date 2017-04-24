@@ -33,8 +33,18 @@ class Role extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany('id_role', 'Resource', 'id_role', ['alias' => 'Resource']);
-        $this->hasMany('id_role', 'User', 'id_role', ['alias' => 'User']);
+        $this->hasMany(
+            'id_role',
+            'Multimodulo\Modules\Common\Models\Resource',
+            'id_role',
+            ['alias' => 'Resource']
+        );
+        $this->hasMany(
+            'id_role',
+            'Multimodulo\Modules\Common\Models\User',
+            'id_role',
+            ['alias' => 'User']
+        );
     }
 
     /**

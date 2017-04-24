@@ -54,7 +54,12 @@ class User extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->belongsTo('id_role', 'Role', 'id_role', ['alias' => 'Role']);
+        $this->belongsTo(
+            'id_role',
+            'Multimodulo\Modules\Common\Models\Role',
+            'id_role',
+            ['alias' => 'Role']
+        );
     }
 
     /**

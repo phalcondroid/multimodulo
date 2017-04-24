@@ -38,8 +38,8 @@ class Arbitro extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany('id_arbitro', 'Partido', 'id_arbitro', ['alias' => 'Partido']);
-        $this->belongsTo('id_pais', 'Pais', 'id_pais', ['alias' => 'Pais']);
+        $this->hasMany('id_arbitro', 'Multimodulo\Modules\Common\Models\Partido', 'id_arbitro', ['alias' => 'Partido']);
+        $this->belongsTo('id_pais', 'Multimodulo\Modules\Common\Models\Pais', 'id_pais', ['alias' => 'Pais']);
     }
 
     /**

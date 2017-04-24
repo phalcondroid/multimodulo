@@ -31,9 +31,9 @@ class Equipo extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany('id_equipo', 'Partido', 'id_equipo1', ['alias' => 'Partido']);
-        $this->hasMany('id_equipo', 'Partido', 'id_equipo2', ['alias' => 'Partido']);
-        $this->belongsTo('id_pais', 'Pais', 'id_pais', ['alias' => 'Pais']);
+        $this->hasMany('id_equipo', 'Multimodulo\Modules\Common\Models\Partido', 'id_equipo1', ['alias' => 'Partido']);
+        $this->hasMany('id_equipo', 'Multimodulo\Modules\Common\Models\Partido', 'id_equipo2', ['alias' => 'Partido']);
+        $this->belongsTo('id_pais', 'Multimodulo\Modules\Common\Models\Pais', 'id_pais', ['alias' => 'Pais']);
     }
 
     /**

@@ -33,7 +33,12 @@ class Action extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->belongsTo('id_resource', 'Resource', 'id_resourse', ['alias' => 'Resource']);
+        $this->belongsTo(
+            'id_resource',
+            'Multimodulo\Modules\Common\Models\Resource',
+            'id_resourse',
+            ['alias' => 'Resource']
+        );
     }
 
     /**

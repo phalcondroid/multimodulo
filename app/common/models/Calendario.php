@@ -38,7 +38,7 @@ class Calendario extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->belongsTo('id_partido', 'Partido', 'id_partido', ['alias' => 'Partido']);
+        $this->belongsTo('id_partido', 'Multimodulo\Modules\Common\Models\Partido', 'id_partido', ['alias' => 'Partido']);
     }
 
     /**

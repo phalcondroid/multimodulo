@@ -24,8 +24,8 @@ class Pais extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany('id_pais', 'Arbitro', 'id_pais', ['alias' => 'Arbitro']);
-        $this->hasMany('id_pais', 'Equipo', 'id_pais', ['alias' => 'Equipo']);
+        $this->hasMany('id_pais', 'Multimodulo\Modules\Common\Models\Arbitro', 'id_pais', ['alias' => 'Arbitro']);
+        $this->hasMany('id_pais', 'Multimodulo\Modules\Common\Models\Equipo', 'id_pais', ['alias' => 'Equipo']);
     }
 
     /**

@@ -24,7 +24,7 @@ class Estado extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany('idestado', 'Partido', 'id_estado', ['alias' => 'Partido']);
+        $this->hasMany('idestado', 'Multimodulo\Modules\Common\Models\Partido', 'id_estado', ['alias' => 'Partido']);
     }
 
     /**

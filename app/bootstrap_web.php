@@ -47,6 +47,7 @@ try {
     $application->registerModules([
         'frontend' => ['className' => 'Multimodulo\Modules\Frontend\Module'],
         'admin'    => ['className' => 'Multimodulo\Modules\Admin\Module'],
+        'role'     => ['className' => 'Multimodulo\Modules\Role\Module'],
     ]);
 
     /**
