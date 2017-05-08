@@ -1,5 +1,7 @@
 <?php
 
+namespace Multimodulo\Modules\Common\Models;
+
 class Pais extends \Phalcon\Mvc\Model
 {
 

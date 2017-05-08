@@ -1,5 +1,7 @@
 <?php
 
+namespace Multimodulo\Modules\Common\Models;
+
 class Equipo extends \Phalcon\Mvc\Model
 {
 

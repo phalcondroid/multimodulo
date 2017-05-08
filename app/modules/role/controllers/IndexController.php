@@ -17,15 +17,15 @@ class IndexController extends ControllerBase
                 "string", "striptags"
             ));
             $password = $this->request->getPost("password");
-            $exist = User::findFirstByUser($username);
+            $user     = User::findFirstByUser($username);
 
-            if ($exist != false) {
-                if (password_verify($password, $exist->password)) {
+            if ($user != false) {
+                if (password_verify($password, $user->password)) {
                     $this->session->set(
                         "user",
-                        $exist
+                        $user
                     );
-                    $this->response->redirect("role/role/index");
+                    $this->response->redirect($user->Role->link);
                 } else {
                     $this->flash->error("password input wrong");
                 }

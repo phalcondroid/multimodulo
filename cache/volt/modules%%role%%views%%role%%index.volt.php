@@ -36,12 +36,12 @@
                 </td>
                 <td>
                     <a class="btn btn-warning" href="<?= $this->url->get('role/role/edit/' . $item->id_role) ?>">
-                        edit
+                        <span class="glyphicon glyphicon-pencil"></span>
                     </a>
                 </td>
                 <td>
                     <a class="btn btn-danger"href="<?= $this->url->get('role/role/delete/' . $item->id_role) ?>">
-                        delete
+                        <span class="glyphicon glyphicon-trash"></span>
                     </a>
                 </td>
             </tr>

@@ -1,5 +1,7 @@
 <?php
 
+namespace Multimodulo\Modules\Common\Models;
+
 class Estado extends \Phalcon\Mvc\Model
 {
 

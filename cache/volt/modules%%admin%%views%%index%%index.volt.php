@@ -1,9 +1,10 @@
 <div class="page-header">
-    <h1>Welcome! Admin </h1>
+    <h1>Welcome! Super Admin </h1>
 </div>
 
 <h1>Login</h1>
-<?= $this->tag->form(['admin/index', 'method' => 'post']) ?>
+
+<?= $this->tag->form(['admin/index/index', 'method' => 'post']) ?>
     <div class="row">
         <div class="cols-md-6">
             <span >Username</span>

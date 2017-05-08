@@ -1,5 +1,7 @@
 <?php
 
+namespace Multimodulo\Modules\Common\Models;
+
 class Partido extends \Phalcon\Mvc\Model
 {
 

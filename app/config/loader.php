@@ -8,8 +8,8 @@ $loader = new Loader();
  * Register Namespaces
  */
 $loader->registerNamespaces([
-    'Multimodulo\Models' => APP_PATH . '/common/models/',
-    'Multimodulo'        => APP_PATH . '/common/library/',
+    'Multimodulo\Modules\Common\Models'  => APP_PATH . '/common/models/',
+    'Multimodulo\Modules\Common\Library' => APP_PATH . '/common/library/',
 ]);
 
 /**

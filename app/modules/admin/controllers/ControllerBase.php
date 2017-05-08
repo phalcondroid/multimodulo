@@ -15,21 +15,35 @@ class ControllerBase extends Controller
 
     public function beforeExecuteRoute($dispatcher)
     {
-        /*
         $controller = $dispatcher->getControllerName();
         $action     = $dispatcher->getActionName();
 
-        if ($this->acl->isAllowed("admin", $controller, $action)) {
-            if ($controller == "access" and $action != "edit") {
-                $dispatcher->forward(array(
-                    "controller" => "access",
-                    "action"     => "edit"
-                ));
-                $this->response->redirect("access/edit");
+        if ($this->session->get("user")) {
+            $aclManager = new AclManager();
+            $aclManager->initialize(
+                $dispatcher,
+                $this->session->get("user")
+            );
+            if (!$aclManager->checkPermissions($controller, $action)) {
+
+                if ($controller != "index") {
+                    $this->response->redirect("/role/index/index");
+                } else {
+                    $this->response->redirect(
+                        $this->session->get("user")->Role->link
+                    );
+                }
+            } else {
+                if ($controller == "index") {
+                    $this->response->redirect(
+                        $this->session->get("user")->Role->link
+                    );
+                }
             }
         } else {
-            $this->flash->error("acceso denegado, hable con invamer");
+            if ($controller != "index") {
+                $this->response->redirect("/role/index/index");
+            }
         }
-        */
     }
 }

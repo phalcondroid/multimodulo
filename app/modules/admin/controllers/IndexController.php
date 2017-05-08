@@ -4,6 +4,7 @@ namespace Multimodulo\Modules\Admin\Controllers;
 
 use Multimodulo\Modules\Admin\Forms\FormInsert;
 use Multimodulo\Modules\Common\Models\User;
+use Multimodulo\Modules\Common\Models\Role;
 
 class IndexController extends ControllerBase
 {
@@ -13,21 +14,19 @@ class IndexController extends ControllerBase
     public function indexAction()
     {
         if ($this->request->isPost()) {
-
-            $username = $this->request->getPost("username");
+            $username = $this->request->getPost("username", array(
+                "string", "striptags"
+            ));
             $password = $this->request->getPost("password");
-            $exist = User::findFirstByUser($username);
+            $user     = User::findFirstByUser($username);
 
-            if ($exist != false) {
-                if ($exist->password == $password) {
+            if ($user != false) {
+                if (password_verify($password, $user->password)) {
                     $this->session->set(
-                        "login",
-                        $exist
+                        "user",
+                        $user
                     );
-                    $this->dispatcher->forward(array(
-                        "controller" => "index",
-                        "action"     => "edit"
-                    ));
+                    $this->response->redirect($user->Role->link);
                 } else {
                     $this->flash->error("password input wrong");
                 }
@@ -37,24 +36,9 @@ class IndexController extends ControllerBase
         }
     }
 
-    public function editAction()
-    {
-        $form = new FormInsert();
-        $this->view->formInsert = $form;
-
-        if ($this->request->isPost()) {
-            if (!$form->isValid($_POST, $model)) {
-                $messages = $form->getMessages();
-                foreach ($messages as $message) {
-                    echo $message, "<br>";
-                }
-            }
-        }
-    }
-
     public function destroyAction()
     {
         $this->session->destroy();
-        $this->reponse->redirect("admin/index");
+        $this->response->redirect("role/role/index");
     }
 }

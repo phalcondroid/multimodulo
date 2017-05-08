@@ -26,8 +26,19 @@ class ControllerBase extends Controller
                 $this->session->get("user")
             );
             if (!$aclManager->checkPermissions($controller, $action)) {
+
                 if ($controller != "index") {
                     $this->response->redirect("/role/index/index");
+                } else {
+                    $this->response->redirect(
+                        $this->session->get("user")->Role->link
+                    );
+                }
+            } else {
+                if ($controller == "index") {
+                    $this->response->redirect(
+                        $this->session->get("user")->Role->link
+                    );
                 }
             }
         } else {

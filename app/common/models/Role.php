@@ -2,6 +2,8 @@
 
 namespace Multimodulo\Modules\Common\Models;
 
+use Phalcon\Mvc\Model\Behavior\SoftDelete;
+
 class Role extends \Phalcon\Mvc\Model
 {
 
@@ -20,6 +22,11 @@ class Role extends \Phalcon\Mvc\Model
      * @Column(type="string", length=45, nullable=true)
      */
     public $role;
+
+    /**
+     *
+     */
+    public $link;
 
     /**
      *
@@ -45,6 +52,14 @@ class Role extends \Phalcon\Mvc\Model
             'id_role',
             ['alias' => 'User']
         );
+    }
+
+    public function beforeDelete()
+    {
+        $this->addBehavior(new SoftDelete([
+            'field' => 'status',
+            'value' => 0
+        ]));
     }
 
     /**

@@ -1,7 +1,28 @@
 <div class="page-header">
-    <h1>Congratulations! Frontend</h1>
+    <h1>Consulta de arbitros</h1>
 </div>
 
-<p>You're now flying with Phalcon. Great things are about to happen!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Pais
+            </th>
+            <th>
+                estado
+            </th>
+        </tr>
+    </thead>
+    <tbody id="cuerpo">
 
-<p>This page is located at <code>views/index/index.volt</code></p>
+    </tbody>
+</table>
+
+<?= $this->tag->javascriptInclude('js/Output/frontend.js') ?>
+
+<script type="text/javascript">
+    new Frontend.Arbitros("<?= $this->url->get() ?>");
+</script>

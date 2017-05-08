@@ -7,6 +7,11 @@ use Multimodulo\Modules\Common\Models\Role;
 
 class ResourceController extends ControllerBase
 {
+    public function initialize()
+    {
+        $this->view->setLayout("main");
+    }
+
     /**
      *
      */

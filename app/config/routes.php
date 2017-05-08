@@ -2,6 +2,37 @@
 
 $router = $di->get("router");
 
+$router->add(
+    '/',
+    array(
+        'namespace' => "Multimodulo\Modules\Frontend\Controllers",
+        'module' => "frontend",
+        'controller' => 'index',
+        'action' => 'index'
+    )
+);
+
+$router->add(
+    '/front/:controller/:action',
+    array(
+        'namespace' => "Multimodulo\Modules\Frontend\Controllers",
+        'module' => "frontend",
+        'controller' => 1,
+        'action' => 2
+    )
+);
+
+$router->add(
+    '/admin',
+    array(
+        'namespace' => "Multimodulo\Modules\Role\Controllers",
+        'module' => "role",
+        'controller' => "index",
+        'action' => "index"
+    )
+);
+
+/*
 foreach ($application->getModules() as $key => $module) {
 
     //$namespace = str_replace('\Modules', "", $module["className"]);
@@ -32,5 +63,6 @@ foreach ($application->getModules() as $key => $module) {
         'params' => 3
     ]);
 }
+*/
 
 $di->set("router", $router);

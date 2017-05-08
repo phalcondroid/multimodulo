@@ -13,7 +13,7 @@ use Phalcon\Flash\Session as Flash;
  */
 $di->setShared('router', function () {
     $router = new Router();
-
+    
     $router->setDefaultModule('frontend');
     $router->setDefaultNamespace('Multimodulo\Modules\Frontend\Controllers');
 
@@ -55,8 +55,8 @@ $di->set('flash', function () {
 });
 
 /**
-* Set the default namespace for dispatcher
-*/
+ * Set the default namespace for dispatcher
+ */
 $di->setShared('dispatcher', function() {
     $dispatcher = new Dispatcher();
     $dispatcher->setDefaultNamespace('Multimodulo\Modules\Frontend\Controllers');
