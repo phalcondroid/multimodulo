@@ -5,7 +5,7 @@ namespace Multimodulo\Modules\Role\Controllers;
 use Multimodulo\Modules\Common\Models\Role;
 
 /**
- *
+ * 
  */
 class RoleController extends ControllerBase
 {
@@ -27,12 +27,11 @@ class RoleController extends ControllerBase
      */
     public function indexAction($id, $datos = array())
     {
+        $this->view->name = $this->session->get("user")->name;
         $roles = Role::find("status = 1");
         $this->view->roles = $roles;
         return array();
     }
-
-    (new Role())->indexAction
 
     public function deleteAction($id)
     {

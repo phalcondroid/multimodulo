@@ -4,8 +4,9 @@ namespace Multimodulo\Modules\Admin\Controllers;
 use Phalcon\Mvc\Controller;
 use Multimodulo\Modules\Common\Models\User;
 use Multimodulo\Modules\Common\Models\Role;
-use Multimodulo\Modules\Common\Models\Resource;
 use Multimodulo\Modules\Common\Models\Action;
+use Multimodulo\Modules\Common\Models\Resource;
+use Multimodulo\Modules\Common\Library\AclManager;
 
 class ControllerBase extends Controller
 {
@@ -27,7 +28,7 @@ class ControllerBase extends Controller
             if (!$aclManager->checkPermissions($controller, $action)) {
 
                 if ($controller != "index") {
-                    $this->response->redirect("/role/index/index");
+                    $this->response->redirect("/admin/index/index");
                 } else {
                     $this->response->redirect(
                         $this->session->get("user")->Role->link
@@ -42,7 +43,7 @@ class ControllerBase extends Controller
             }
         } else {
             if ($controller != "index") {
-                $this->response->redirect("/role/index/index");
+                $this->response->redirect("/admin/index/index");
             }
         }
     }

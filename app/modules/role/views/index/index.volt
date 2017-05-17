@@ -26,4 +26,5 @@
             {{ submit_button("Enviar", "class" : "btn btn-notice") }}
         </div>
     </div>
+    <input type="hidden" name="{{ security.getTokenKey() }}" value="{{ security.getToken() }}"/>
 {{ end_form() }}

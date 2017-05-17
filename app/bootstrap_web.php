@@ -58,5 +58,7 @@ try {
     echo $application->handle()->getContent();
 
 } catch (\Exception $e) {
+    echo $e->getMessage() . "<br>";
+    echo $e->getTraceAsString() . "<br>";
     require '../app/bootstrap_api.php';
 }

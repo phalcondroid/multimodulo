@@ -26,4 +26,5 @@
             <?= $this->tag->submitButton(['Enviar', 'class' => 'btn btn-notice']) ?>
         </div>
     </div>
+    <input type="hidden" name="<?= $this->security->getTokenKey() ?>" value="<?= $this->security->getToken() ?>"/>
 <?= $this->tag->endForm() ?>

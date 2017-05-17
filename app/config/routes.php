@@ -13,6 +13,26 @@ $router->add(
 );
 
 $router->add(
+    '/getEquipos',
+    array(
+        'namespace' => "Multimodulo\Modules\Frontend\Controllers",
+        'module' => "frontend",
+        'controller' => 'index',
+        'action' => 'getEquipos'
+    )
+);
+
+$router->add(
+    '/getPartidos',
+    array(
+        'namespace'  => "Multimodulo\Modules\Frontend\Controllers",
+        'module'     => "frontend",
+        'controller' => 'index',
+        'action'     => 'getPartidos'
+    )
+);
+
+$router->add(
     '/front/:controller/:action',
     array(
         'namespace' => "Multimodulo\Modules\Frontend\Controllers",
@@ -23,11 +43,83 @@ $router->add(
 );
 
 $router->add(
-    '/admin',
+    '/role',
     array(
         'namespace' => "Multimodulo\Modules\Role\Controllers",
         'module' => "role",
         'controller' => "index",
+        'action' => "index"
+    )
+);
+
+$router->add(
+    '/role/:controller/:action',
+    array(
+        'namespace' => "Multimodulo\Modules\Role\Controllers",
+        'module' => "role",
+        'controller' => 1,
+        'action' => 2
+    )
+);
+
+$router->add(
+    '/role/:controller/:action/:params',
+    array(
+        'namespace' => "Multimodulo\Modules\Role\Controllers",
+        'module' => "role",
+        'controller' => 1,
+        'action' => 2,
+        'params'  => 3
+    )
+);
+
+$router->add(
+    '/role/:controller',
+    array(
+        'namespace' => "Multimodulo\Modules\Role\Controllers",
+        'module' => "role",
+        'controller' => 1,
+        'action' => "index"
+    )
+);
+
+$router->add(
+    '/admin',
+    array(
+        'namespace' => "Multimodulo\Modules\Admin\Controllers",
+        'module' => "admin",
+        'controller' => "index",
+        'action' => "index"
+    )
+);
+
+$router->add(
+    '/admin/:controller/:action',
+    array(
+        'namespace' => "Multimodulo\Modules\Admin\Controllers",
+        'module' => "admin",
+        'controller' => 1,
+        'action' => 2
+    )
+);
+
+$router->add(
+    '/admin/:controller/:action/:params',
+    array(
+        'namespace' => "Multimodulo\Modules\Admin\Controllers",
+        'module' => "admin",
+        'controller' => 1,
+        'action' => 2,
+        'params'  => 3
+    )
+);
+
+$router->add(
+    '/admin/:controller',
+    array(
+        'namespace' => "Multimodulo\Modules\Admin\Controllers",
+        'module' => "admin",
+        'controller' => 1,
         'action' => "index"
     )
 );

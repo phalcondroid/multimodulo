@@ -56,8 +56,8 @@ class Partido extends \Phalcon\Mvc\Model
     {
         $this->hasMany('id_partido',   'Multimodulo\Modules\Common\Models\Calendario', 'id_partido', ['alias' => 'Calendario']);
         $this->belongsTo('id_arbitro', 'Multimodulo\Modules\Common\Models\Arbitro', 'id_arbitro', ['alias' => 'Arbitro']);
-        $this->belongsTo('id_equipo1', 'Multimodulo\Modules\Common\Models\Equipo', 'id_equipo', ['alias' => 'Equipo']);
-        $this->belongsTo('id_equipo2', 'Multimodulo\Modules\Common\Models\Equipo', 'id_equipo', ['alias' => 'Equipo']);
+        $this->belongsTo('id_equipo1', 'Multimodulo\Modules\Common\Models\Equipo', 'id_equipo', ['alias' => 'Equipo1']);
+        $this->belongsTo('id_equipo2', 'Multimodulo\Modules\Common\Models\Equipo', 'id_equipo', ['alias' => 'Equipo2']);
         $this->belongsTo('id_estado',  'Multimodulo\Modules\Common\Models\Estado', 'idestado', ['alias' => 'Estado']);
     }
 

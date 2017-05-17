@@ -39,6 +39,6 @@ class IndexController extends ControllerBase
     public function destroyAction()
     {
         $this->session->destroy();
-        $this->response->redirect("role/role/index");
+        $this->response->redirect("admin/index/index");
     }
 }

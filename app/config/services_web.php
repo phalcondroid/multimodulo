@@ -13,7 +13,7 @@ use Phalcon\Flash\Session as Flash;
  */
 $di->setShared('router', function () {
     $router = new Router();
-    
+
     $router->setDefaultModule('frontend');
     $router->setDefaultNamespace('Multimodulo\Modules\Frontend\Controllers');
 
