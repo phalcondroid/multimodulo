@@ -20,6 +20,22 @@ $di->setShared('router', function () {
     return $router;
 });
 
+$di->set("phpmailer", function () {
+    $config = $this->getConfig();
+    $mail = new PHPMailer;
+    $mail->isSMTP();
+    $mail->SMTPDebug = 2;
+    $mail->Debugoutput = 'html';
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 587;
+    $mail->SMTPSecure = 'tls';
+    $mail->SMTPAuth = true;
+    $mail->Username = $config->phpmailer->username;
+    $mail->Password = $config->phpmailer->password;
+    $mail->correo   = $config->phpmailer->username;
+    return $mail;
+});
+
 /**
  * The URL component is used to generate all kinds of URLs in the application
  */

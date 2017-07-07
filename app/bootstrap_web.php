@@ -7,8 +7,9 @@ error_reporting(E_ALL);
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');
 
-
 try {
+
+    require __DIR__ . "/vendor/autoload.php";
 
     /**
      * The FactoryDefault Dependency Injector automatically registers the services that

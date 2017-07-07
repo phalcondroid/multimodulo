@@ -1,10 +1,12 @@
 <h1>Nuevo recurso</h1>
 
-<a class="btn btn-default pull-right" href="<?= $this->url->get('role/role/index') ?>">
-    <span class="glyphicon glyphicon-plus"></span>
+<a class="btn btn-danger pull-right" href="<?= $this->url->get('role/role/index') ?>">
+    <span class="glyphicon glyphicon-backward"></span>
 </a>
+
 <br><br>
-<?= $this->tag->form(['role/resource/new', 'method' => 'post']) ?>
+
+<?= $this->tag->form(['role/resource/new/' . $idRole, 'method' => 'post']) ?>
     <div class="row">
         <div class="cols-md-6">
             <span >Nombre</span>

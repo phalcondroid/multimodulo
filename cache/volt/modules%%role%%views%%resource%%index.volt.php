@@ -2,7 +2,11 @@
     Lista de recursos
 </h1>
 
-<a class="btn btn-default pull-right" href="<?= $this->url->get('role/resource/new') ?>">
+<a class="btn btn-danger pull-right" href="<?= $this->url->get('role/role/index') ?>">
+    <span class="glyphicon glyphicon-backward"></span>
+</a>
+
+<a class="btn btn-default pull-right" href="<?= $this->url->get('role/resource/new/' . $idRole) ?>">
     <span class="glyphicon glyphicon-plus"></span>
 </a>
 

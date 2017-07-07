@@ -26,6 +26,12 @@ return new \Phalcon\Config([
         'baseUri'        => '/multimodulo/'
     ],
 
+    "phpmailer" => array(
+        "username" => "testinvamer@gmail.com",
+        "password" => "invamer123",
+        "debugoutput" => "html"
+    ),
+
     /**
      * if true, then we print a new line at the end of each CLI execution
      *

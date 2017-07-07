@@ -16,6 +16,20 @@ class ControllerBase extends Controller
 
     public function beforeExecuteRoute($dispatcher)
     {
+        if ($this->session->get("user")) {
+            $resource = Resource::findFirst(array(
+                "conditions" => "id_role = ?1 and name = ?2",
+                "bind" => array(
+                    1 => $this->session->get("user")->id_role,
+                    2 => "menu"
+                )
+            ));
+            if ($resource)
+                $this->view->menu = Action::findByIdResource($resource->id_resource);
+            else
+                $this->view->menu = array();
+        }
+
         $controller = $dispatcher->getControllerName();
         $action     = $dispatcher->getActionName();
 
@@ -26,7 +40,6 @@ class ControllerBase extends Controller
                 $this->session->get("user")
             );
             if (!$aclManager->checkPermissions($controller, $action)) {
-
                 if ($controller != "index") {
                     $this->response->redirect("/role/index/index");
                 } else {

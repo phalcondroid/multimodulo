@@ -1,0 +1,7 @@
+app/config/config.php
+app/vendor/*
+cache
+cache/*
+cache/volt
+cache/volt/*
+cache/volt/
